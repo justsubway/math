@@ -107,4 +107,8 @@ button {
     .save {
         margin-bottom: 150px;
     }
+    .icons {
+        height: 20px;
+        width: 20px;
+    }
 }
