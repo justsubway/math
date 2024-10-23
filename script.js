@@ -104,17 +104,15 @@ function loadUserSettings() {
 
 function loadQuestion() {
     const feedContainer = document.getElementById("feedContainer");
-
-    // Clear the current question
+    
     feedContainer.innerHTML = '';
-
-    // Create the new question element
+    
     const questionCard = document.createElement("div");
     questionCard.className = "question-card";
 
     const questionText = document.createElement("p");
     questionText.className = "question";
-    questionText.innerText = questions[currentQuestionIndex].question;
+    questionText.innerText = questions[selectedQuestions[currentQuestionIndex]].question;
 
     const answerButton = document.createElement("button");
     answerButton.className = "answer-btn";
@@ -122,72 +120,65 @@ function loadQuestion() {
     answerButton.onclick = () => showAnswer(answerImg);
 
     const answerImg = document.createElement("img");
-    answerImg.src = questions[currentQuestionIndex].answerImg;
+    answerImg.src = questions[selectedQuestions[currentQuestionIndex]].answerImg;
     answerImg.className = "answer-img";
-
-    // Append elements
+    
     questionCard.appendChild(questionText);
     questionCard.appendChild(answerButton);
     questionCard.appendChild(answerImg);
     feedContainer.appendChild(questionCard);
 }
 
-// Handle next question with animation
 function nextQuestionWithAnimation() {
     const feedContainer = document.getElementById("feedContainer");
     const currentCard = feedContainer.querySelector(".question-card");
-
-    // Animate the current question out (move up)
+    
     currentCard.classList.add("hidden-up");
-
-    // Wait for animation to finish (0.5s), then load the next question
+    
     setTimeout(() => {
-        currentQuestionIndex = (currentQuestionIndex + 1) % selectedQuestions.length;
+        currentQuestionIndex = (currentQuestionIndex + 1) % selectedQuestions.length;  // Cycle through selected questions only
         loadQuestion();
 
-        // Animate the new question in (move up from bottom)
+        
         const newCard = feedContainer.querySelector(".question-card");
         newCard.classList.add("hidden-down");
 
         setTimeout(() => {
             newCard.classList.remove("hidden-down");
-        }, 50); // Slight delay to trigger the CSS transition
-    }, 500); // Time matches the CSS animation duration
+        }, 50);
+    }, 500); 
 }
 
-// Handle previous question with animation
+
 function previousQuestionWithAnimation() {
     const feedContainer = document.getElementById("feedContainer");
     const currentCard = feedContainer.querySelector(".question-card");
-
-    // Animate the current question out (move down)
+    
     currentCard.classList.add("hidden-down");
-
-    // Wait for animation to finish (0.5s), then load the previous question
+    
     setTimeout(() => {
-        currentQuestionIndex = (currentQuestionIndex - 1 + selectedQuestions.length) % selectedQuestions.length;
+        currentQuestionIndex = (currentQuestionIndex - 1 + selectedQuestions.length) % selectedQuestions.length;  // Cycle through selected questions only
         loadQuestion();
 
-        // Animate the new question in (move down from top)
+
         const newCard = feedContainer.querySelector(".question-card");
         newCard.classList.add("hidden-up");
 
         setTimeout(() => {
             newCard.classList.remove("hidden-up");
-        }, 50); // Slight delay to trigger the CSS transition
-    }, 500); // Time matches the CSS animation duration
+        }, 50); 
+    }, 500); 
 }
 
-// Show or hide the answer when the button is clicked
+
 function showAnswer(imgElement) {
     imgElement.style.display = imgElement.style.display === "block" ? "none" : "block";
 }
 
-// Detect scrolling to trigger the next or previous question
 window.addEventListener('wheel', (event) => {
-    if (event.deltaY > 0) {  // Scrolling down
+    if (event.deltaY > 0) {
         nextQuestionWithAnimation();
-    } else if (event.deltaY < 0) {  // Scrolling up
+    } else if (event.deltaY < 0) { 
         previousQuestionWithAnimation();
     }
 });
@@ -217,15 +208,12 @@ function handleTouchMove(evt) {
 
     if (Math.abs(xDiff) <= Math.abs(yDiff)) {
         if (yDiff > 0) {
-            // Swipe up detected (like scrolling down)
             nextQuestionWithAnimation();
         } else {
-            // Swipe down detected (like scrolling up)
             previousQuestionWithAnimation();
         }
     }
-
-    // Reset values after swipe
+    
     xDown = null;
     yDown = null;
 }
@@ -236,6 +224,7 @@ window.onload = function () {
 
     document.getElementById("nextQuestionBtn").addEventListener("click", nextQuestionWithAnimation);
 };
+
 
 
 
