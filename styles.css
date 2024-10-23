@@ -7,11 +7,22 @@ body {
 
 .feed-container {
     width: 100%;
-    height: 80vh; /* Question area */
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+.answer-btn {
+    background-color: #ff0050;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
 }
 
 .next-btn {
@@ -46,18 +57,7 @@ body {
     font-weight: bold;
 }
 
-button {
-    background-color: #ff0050;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.button:hover {
-    background-color: #e60047;
-}
 
 .answer-img {
     margin-top: 10px;
