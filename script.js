@@ -90,7 +90,6 @@ const questions = [
 ];
 
 
-
 let currentQuestionIndex = 0;
 let selectedQuestions = [];
 
@@ -104,8 +103,12 @@ function loadUserSettings() {
 }
 
 function loadQuestion() {
-    const feedContainer = document.getElementById("feedContainer");
+    if (selectedQuestions.length === 0) {
+        document.getElementById("feedContainer").innerHTML = "<p>No questions selected.</p>";
+        return;
+    }
 
+    const feedContainer = document.getElementById("feedContainer");
     feedContainer.innerHTML = '';
 
     const questionCard = document.createElement("div");
@@ -113,7 +116,7 @@ function loadQuestion() {
 
     const questionText = document.createElement("p");
     questionText.className = "question";
-    questionText.innerText = questions[currentQuestionIndex].question;
+    questionText.innerText = questions[selectedQuestions[currentQuestionIndex]].question;
 
     const answerButton = document.createElement("button");
     answerButton.className = "answer-btn";
@@ -121,9 +124,9 @@ function loadQuestion() {
     answerButton.onclick = () => showAnswer(answerImg);
 
     const answerImg = document.createElement("img");
-    answerImg.src = questions[currentQuestionIndex].answerImg;
+    answerImg.src = questions[selectedQuestions[currentQuestionIndex]].answerImg;
     answerImg.className = "answer-img";
-
+    answerImg.style.display = "none";
 
     questionCard.appendChild(questionText);
     questionCard.appendChild(answerButton);
@@ -131,22 +134,19 @@ function loadQuestion() {
     feedContainer.appendChild(questionCard);
 }
 
-
 function showAnswer(imgElement) {
     imgElement.style.display = imgElement.style.display === "block" ? "none" : "block";
 }
-
 
 function nextQuestion() {
     currentQuestionIndex = (currentQuestionIndex + 1) % selectedQuestions.length;
     loadQuestion();
 }
 
-
 window.onload = function () {
     loadUserSettings();
     loadQuestion();
 
-
     document.getElementById("nextQuestionBtn").addEventListener("click", nextQuestion);
 };
+
