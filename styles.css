@@ -16,9 +16,22 @@ body {
     text-align: center;
 }
 
-.question {
-    font-size: 18px;
-    margin-bottom: 20px;
+.question-card {
+    position: relative;
+    width: 100%;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.question-card.hidden-up {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.question-card.hidden-down {
+    opacity: 0;
+    transform: translateY(100%);
 }
 
 .answer-btn {
@@ -65,7 +78,7 @@ body {
 }
 
 .answer-img {
-    margin-top: 10px;
+    margin: 10px auto;
     max-width: 100%;
     border-radius: 10px;
     display: none;
