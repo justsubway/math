@@ -1,4 +1,4 @@
-document.getElementById("saveSettingsBtn").addEventListener("click", function () {
+function saveSettings() {
     const checkboxes = document.querySelectorAll("#questionForm input[type='checkbox']");
     const selectedQuestions = [];
 
@@ -10,4 +10,20 @@ document.getElementById("saveSettingsBtn").addEventListener("click", function ()
 
     localStorage.setItem("questionSettings", JSON.stringify(selectedQuestions));
     alert("Settings saved successfully!");
-});
+};
+
+window.onload = function () {
+    const storedSettings = localStorage.getItem("questionSettings");
+    if (storedSettings) {
+        const selectedQuestions = JSON.parse(storedSettings);
+        const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+        checkboxes.forEach(checkbox => {
+            if (selectedQuestions.includes(parseInt(checkbox.value))) {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
+    });
+    }
+};
