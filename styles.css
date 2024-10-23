@@ -11,7 +11,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.question {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .answer-btn {
@@ -57,14 +64,19 @@ body {
     font-weight: bold;
 }
 
-
-
 .answer-img {
     margin-top: 10px;
     max-width: 100%;
     border-radius: 10px;
     display: none;
+    animation: fadeIn 0.2s ease-in-out;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 
 .settings-container {
     text-align: center;
