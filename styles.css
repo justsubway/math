@@ -94,6 +94,9 @@ button {
         margin: -40px auto;
     }
     .feed-container {
-        font-size: 13px;
+        font-size: 10px;
+    }
+    .settings-container label {
+        font-size: 14px;
     }
 }
