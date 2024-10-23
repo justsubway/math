@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="settings-container">
+    <h1>Ρυθμίσεις</h1>
+    <p>Επίλεξε τους ορισμούς που θες να εμφανίζονται:</p>
+
+    <form id="questionForm">
+        <label>
+            <input type="checkbox" name="question1" value="0" checked> Ορισμός Συνάρτησης
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question2" value="1" checked> Ορισμός Γραφικής Παράστασης
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question3" value="2" checked> Ορισμός Σύνολο Τιμών
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question4" value="3" checked> Ορισμός Ίσων Συναρτήσεων
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question5" value="4" checked> Ορισμός Σύνθεσης
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question6" value="5" checked> Ορισμός Αύξουσας/Φθίνουσας
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question7" value="6" checked> Ορισμός Ολικό Μέγιστο
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question8" value="7" checked> Ορισμός Ολικό Ελάχιστο
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question9" value="8" checked> Ορισμός Τοπικό Μέγιστο
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question10" value="9" checked> Ορισμός Τοπικό Ελάχιστο
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question11" value="10" checked> Ορισμός "1-1"
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question12" value="11" checked> Ορισμός Αντίστροφης
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question13" value="12" checked> Ορισμός Κριτήριο Παρεμβολής
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question14" value="13" checked> Ορισμός Συνεχής σε σημέιο x₀
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question15" value="14" checked> Ορισμός Συνεχής σε (α, β)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question16" value="15" checked> Ορισμός Συνεχής σε [α, β]
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question17" value="16" checked> Ορισμός Bolzano & Γεωμετρική Ερμηνεία
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question18" value="17" checked> Ορισμός ΘΕΤ
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question19" value="18" checked> Ορισμός ΘΜΕΤ
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question20" value="19" checked> Ορισμός Εφαπτομένης
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question21" value="20" checked> Ορισμός Παραγώγου σε x₀
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="question22" value="21" checked> Ορισμός Παραγώγου σε πεδίο ορισμού
+        </label>
+        <br>
+        <button type="button" onclick="saveSettings()">Αποθήκευση</button>
+    </form>
+</div>
+
+<div class="navigation-menu">
+    <a href="index.html" class="nav-item">Ερωτήσεις</a>
+    <a href="settings.html" class="nav-item">Ρυθμίσεις</a>
+</div>
+
+<script src="settings.js"></script>
+</body>
+</html>
