@@ -46,18 +46,17 @@ body {
 }
 
 .next-btn {
+    width: 10%;
     background-color: #ff0050;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     display: block;
     margin: 10px auto;
-}
-
-.next-btn:hover {
-    background-color: #e60047;
+    text-align: center;
+    font-size: 14px;
 }
 
 .navigation-menu {
@@ -121,7 +120,10 @@ body {
 
 @media only screen and (max-width: 600px) {
     .next-btn {
-        margin: -65px auto;
+        margin: -40px auto;
+        height: 20px;
+        width: 90px;
+        font-size: 10px;
     }
     .feed-container {
         font-size: 10px;
