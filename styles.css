@@ -22,7 +22,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: -20px auto;
+    margin: 10px auto;
 }
 
 .next-btn:hover {
@@ -87,4 +87,13 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .next-btn {
+        margin: -30px auto;
+    }
+    .feed-container {
+        font-size: 12px;
+    }
 }
