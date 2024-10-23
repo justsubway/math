@@ -103,20 +103,18 @@ function loadUserSettings() {
 }
 
 function loadQuestion() {
-    if (selectedQuestions.length === 0) {
-        document.getElementById("feedContainer").innerHTML = "<p>No questions selected.</p>";
-        return;
-    }
-
     const feedContainer = document.getElementById("feedContainer");
+
+    // Clear the current question
     feedContainer.innerHTML = '';
 
+    // Create the new question element
     const questionCard = document.createElement("div");
     questionCard.className = "question-card";
 
     const questionText = document.createElement("p");
     questionText.className = "question";
-    questionText.innerText = questions[selectedQuestions[currentQuestionIndex]].question;
+    questionText.innerText = questions[currentQuestionIndex].question;
 
     const answerButton = document.createElement("button");
     answerButton.className = "answer-btn";
@@ -124,29 +122,120 @@ function loadQuestion() {
     answerButton.onclick = () => showAnswer(answerImg);
 
     const answerImg = document.createElement("img");
-    answerImg.src = questions[selectedQuestions[currentQuestionIndex]].answerImg;
+    answerImg.src = questions[currentQuestionIndex].answerImg;
     answerImg.className = "answer-img";
-    answerImg.style.display = "none";
 
+    // Append elements
     questionCard.appendChild(questionText);
     questionCard.appendChild(answerButton);
     questionCard.appendChild(answerImg);
     feedContainer.appendChild(questionCard);
 }
 
+// Handle next question with animation
+function nextQuestionWithAnimation() {
+    const feedContainer = document.getElementById("feedContainer");
+    const currentCard = feedContainer.querySelector(".question-card");
+
+    // Animate the current question out (move up)
+    currentCard.classList.add("hidden-up");
+
+    // Wait for animation to finish (0.5s), then load the next question
+    setTimeout(() => {
+        currentQuestionIndex = (currentQuestionIndex + 1) % selectedQuestions.length;
+        loadQuestion();
+
+        // Animate the new question in (move up from bottom)
+        const newCard = feedContainer.querySelector(".question-card");
+        newCard.classList.add("hidden-down");
+
+        setTimeout(() => {
+            newCard.classList.remove("hidden-down");
+        }, 50); // Slight delay to trigger the CSS transition
+    }, 500); // Time matches the CSS animation duration
+}
+
+// Handle previous question with animation
+function previousQuestionWithAnimation() {
+    const feedContainer = document.getElementById("feedContainer");
+    const currentCard = feedContainer.querySelector(".question-card");
+
+    // Animate the current question out (move down)
+    currentCard.classList.add("hidden-down");
+
+    // Wait for animation to finish (0.5s), then load the previous question
+    setTimeout(() => {
+        currentQuestionIndex = (currentQuestionIndex - 1 + selectedQuestions.length) % selectedQuestions.length;
+        loadQuestion();
+
+        // Animate the new question in (move down from top)
+        const newCard = feedContainer.querySelector(".question-card");
+        newCard.classList.add("hidden-up");
+
+        setTimeout(() => {
+            newCard.classList.remove("hidden-up");
+        }, 50); // Slight delay to trigger the CSS transition
+    }, 500); // Time matches the CSS animation duration
+}
+
+// Show or hide the answer when the button is clicked
 function showAnswer(imgElement) {
     imgElement.style.display = imgElement.style.display === "block" ? "none" : "block";
 }
 
-function nextQuestion() {
-    currentQuestionIndex = (currentQuestionIndex + 1) % selectedQuestions.length;
-    loadQuestion();
+// Detect scrolling to trigger the next or previous question
+window.addEventListener('wheel', (event) => {
+    if (event.deltaY > 0) {  // Scrolling down
+        nextQuestionWithAnimation();
+    } else if (event.deltaY < 0) {  // Scrolling up
+        previousQuestionWithAnimation();
+    }
+});
+
+window.addEventListener('touchstart', handleTouchStart, false);
+window.addEventListener('touchmove', handleTouchMove, false);
+
+let xDown = null;
+let yDown = null;
+
+function handleTouchStart(evt) {
+    const firstTouch = evt.touches[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) <= Math.abs(yDiff)) {
+        if (yDiff > 0) {
+            // Swipe up detected (like scrolling down)
+            nextQuestionWithAnimation();
+        } else {
+            // Swipe down detected (like scrolling up)
+            previousQuestionWithAnimation();
+        }
+    }
+
+    // Reset values after swipe
+    xDown = null;
+    yDown = null;
 }
 
 window.onload = function () {
     loadUserSettings();
     loadQuestion();
 
-    document.getElementById("nextQuestionBtn").addEventListener("click", nextQuestion);
+    document.getElementById("nextQuestionBtn").addEventListener("click", nextQuestionWithAnimation);
 };
+
+
 
