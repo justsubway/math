@@ -99,4 +99,7 @@ button {
     .settings-container label {
         font-size: 14px;
     }
+    .save {
+        margin-bottom: 150px;
+    }
 }
