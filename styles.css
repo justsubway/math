@@ -89,6 +89,11 @@ button {
     cursor: pointer;
 }
 
+.icons {
+    height: 30px;
+    width: 30px;
+}
+
 @media only screen and (max-width: 600px) {
     .next-btn {
         margin: -40px auto;
