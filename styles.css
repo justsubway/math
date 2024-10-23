@@ -22,7 +22,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: 20px auto;
+    margin: -20px auto;
 }
 
 .next-btn:hover {
