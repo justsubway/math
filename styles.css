@@ -120,7 +120,7 @@ body {
 
 @media only screen and (max-width: 600px) {
     .next-btn {
-        margin: -40px auto;
+        margin: -65px auto;
         height: 20px;
         width: 90px;
         font-size: 10px;
