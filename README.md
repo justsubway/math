@@ -7,4 +7,4 @@ ability to view the answers anytime you wish.
 
 Currently it only features math, but the goal is to expand it covering most of the lessons required in Greek SATs.
 
-VIEW THIS PROJECT IN ACTION <a href="hhtps://thewria.com">HERE</a>
+VIEW THIS PROJECT IN ACTION <a href="hhtps://thewria.com" target="_blank">HERE</a>
