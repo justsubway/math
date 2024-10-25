@@ -203,4 +203,7 @@ body {
         width: 250px;
         height: 250px;
     }
+    .next-btn {
+        margin-top: -150px;
+    }
 }
