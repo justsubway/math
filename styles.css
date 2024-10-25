@@ -202,5 +202,7 @@ body {
     .logo {
         width: 200px;
         height: 200px;
+        margin-top: -70px;
+        margin-bottom: -30px;
     }
 }
