@@ -8,3 +8,4 @@ ability to view the answers anytime you wish.
 Currently it only features math, but the goal is to expand it covering most of the lessons required in Greek SATs.
 
 <p><a target="_blank" href="https://thewria.com">Click to view this project in action!</a></p>
+💡 I suggest using this on mobile for the best experience :)
