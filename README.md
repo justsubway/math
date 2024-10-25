@@ -7,6 +7,4 @@ ability to view the answers anytime you wish.
 
 Currently it only features math, but the goal is to expand it covering most of the lessons required in Greek SATs.
 
-<a href="hhtps://thewria.com" target="_blank">Click to view this project in action!</a>
-
-<p>An absolute URL: <a href="https://www.w3schools.com">W3Schools</a></p>
+<p><a href="hhtps://thewria.com" target="_blank">Click to view this project in action!</a></p>
