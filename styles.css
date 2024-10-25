@@ -202,5 +202,9 @@ body {
     .logo {
         width: 250px;
         height: 250px;
+        margin-top: 70px;
+    }
+    .next-btn {
+        margin-top: -50px;
     }
 }
