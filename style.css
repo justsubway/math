@@ -535,7 +535,7 @@ img {
 
     .hero-section { min-height: calc(100vh - 60px); padding: 20px; }
     .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.05rem; margin-bottom: 30px; }
+    .hero-subtitle { font-size: 1.05rem; margin-bottom: 30px; margin-left: 0px; }
     .hero-cta-button { padding: 14px 28px; font-size: 1rem; }
     .hero-scroll-indicator { font-size: 2rem; bottom: 25px; }
 
