@@ -212,7 +212,7 @@ img {
     position: absolute;
     bottom: 30px;
     left: 30%;
-    transform: translateX(-50%);
+    transform: translateX(-45%);
     font-size: 2.2rem;
     color: #4b5563;
     animation: bounce 2.5s infinite;
