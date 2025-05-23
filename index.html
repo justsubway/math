@@ -1,25 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ορισμοί Μαθηματικών</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thewria - Το Μελλον της Μαθησης</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="feed-container" id="feedContainer">
+<div id="root">
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <h2 class="header-title">Thewria.com</h2>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#hero">Αρχική</a></li>
+                    <li><a href="#story">Η Ιστορία</a></li>
+                    <li><a href="#subjects">Μαθήματα</a></li>
+                    <li><a href="#contact">Επικοινωνία</a></li>
+                    <li><a href="#subscribe">Εγγραφή</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="app-main">
+            <div class="landing-page-content">
+                <section id="hero" class="hero-section">
+                    <div class="hero-content-wrapper" data-animate="fade-in-up">
+                        <h1 class="hero-title">
+                            Από μαθητές, για μαθητές.
+                        </h1>
+                        <p class="hero-subtitle">
+                            Μαθήματα με γρήγορο και ψυχαγωγικό τρόπο. Μια κοινότητα που καταλαβαίνει ακριβώς τι περνάς. Εδώ είναι το μέλλον της μελέτης.
+                        </p>
+                        <a href="#subjects" class="hero-cta-button">
+                            Ξεκίνα τώρα
+                            <span style="margin-left: 12px; font-size: 1.2em;">&darr;</span>
+                        </a>
+                    </div>
+                    <div class="hero-scroll-indicator" data-animate="fade-in" data-animate-delay="500">
+                        <span>&darr;</span>
+                    </div>
+                </section>
+
+                <section id="story" class="story-section container" data-animate="fade-in-up">
+                    <div class="story-icon">📖</div>
+                    <h2 class="story-title">Πώς ξεκίνησαν όλα</h2>
+                    <p class="story-text">
+                        Είμαι μαθητής, όπως κι εσύ. Πέρασα τις Πανελλήνιες το 2025. Ξέρω πόσο σκληρό είναι το σύστημα, πόσο πίεση νιώθεις, και πόσο δύσκολο είναι να μείνεις συγκεντρωμένος.
+                    </p>
+                    <p class="story-text">
+                        Δημιούργησα το Thewria γιατί ήθελα να κάνω τη μελέτη λίγο πιο ανθρώπινη. Όχι βαρετή. Όχι αγχωτική. Αλλά προσβάσιμη, ευχάριστη, και με ρυθμό που να σου ταιριάζει. Όλα όσα θα ήθελα να έχω φέτος, τα έβαλα εδώ. Για εσένα.
+                    </p>
+                </section>
+
+                <section id="subjects" class="subject-selection-section container" data-animate="fade-in-up">
+                    <h2 class="subject-title">Μαθήματα - Οικονομική Κατεύθυνση</h2>
+                    <div class="subject-grid">
+                        <a href="math/index.html" class="subject-card" data-animate="fade-in-up" data-animate-delay="0">
+                            <div class="subject-card-header">
+                                <span class="subject-card-icon">🧮</span>
+                                <h3 class="subject-card-name">Μαθηματικά</h3>
+                            </div>
+                            <p class="subject-card-description">Όλοι οι ορισμοί διαθέσιμοι απλά κάνοντας scroll.</p>
+                            <span class="subject-card-link">Μάθε Περισσότερα &rarr;</span>
+                        </a>
+                        <a href="#" class="subject-card coming-soon" data-animate="fade-in-up" data-animate-delay="100">
+                            <div class="subject-card-header">
+                                <span class="subject-card-icon">💰</span>
+                                <h3 class="subject-card-name">Οικονομικά</h3>
+                            </div>
+                            <p class="subject-card-description">ΑΟΘ και αυτόματος έλεγχος με φωνητική αναγνώριση.</p>
+                            <span class="subject-card-status">Έρχεται σύντομα</span>
+                        </a>
+                        <a href="#" class="subject-card coming-soon" data-animate="fade-in-up" data-animate-delay="200">
+                            <div class="subject-card-header">
+                                <span class="subject-card-icon">💻</span>
+                                <h3 class="subject-card-name">Πληροφορική</h3>
+                            </div>
+                            <p class="subject-card-description">ΑΕΠΠ και πρακτικές ασκήσεις. Έρχεται σύντομα.</p>
+                            <span class="subject-card-status">Έρχεται σύντομα</span>
+                        </a>
+                        <a href="#" class="subject-card coming-soon" data-animate="fade-in-up" data-animate-delay="300">
+                            <div class="subject-card-header">
+                                <span class="subject-card-icon">📝</span>
+                                <h3 class="subject-card-name">Έκθεση</h3>
+                            </div>
+                            <p class="subject-card-description">Έκφραση – Έκθεση όπως την χρειάζεσαι.</p>
+                            <span class="subject-card-status">Έρχεται σύντομα</span>
+                        </a>
+                    </div>
+                    <p class="subject-footer-text">
+                        Οι υπόλοιπες κατευθύνσεις έρχονται σύντομα. Το Thewria μεγαλώνει. Αν θες να συμβάλεις στο έργο μας,
+                        μπορείς να επικοινήσεις μαζί μας παρακάτω!
+                    </p>
+                </section>
+
+                <section id="contact" class="contact-section container" data-animate="fade-in-up">
+                    <div class="contact-icon">💬</div>
+                    <h2 class="contact-title">Επικοινώνησε Μαζί Μας</h2>
+                    <p class="contact-text">
+                        Έχεις απορίες ή ιδέες; Εδώ είμαστε.
+                    </p>
+                    <div class="contact-button-container">
+                        <a href="mailto:contact@thewria.com" class="contact-button">
+                            <span class="contact-button-icon">✉️</span>
+                            Στείλε Email
+                        </a>
+                    </div>
+                    <p class="contact-response-text">
+                        Απαντάμε συνήθως μέσα σε 1-2 μέρες.
+                    </p>
+                </section>
+
+                <section id="subscribe" class="subscribe-section container" data-animate="fade-in-up">
+                    <div class="subscribe-icon">🚀</div>
+                    <h2 class="subscribe-title">Απόκτησε Πρόσβαση στα Premium</h2>
+                    <p class="subscribe-text">
+                        Με την εγγραφή σου στο Thewria Pro, ξεκλειδώνεις επιπλέον υλικό, πιο προχωρημένα θέματα και μια καθαρή εμπειρία χωρίς διαφημίσεις.
+                    </p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Το email σου" class="subscribe-input" required />
+                        <button type="submit" class="subscribe-button">Εγγραφή</button>
+                    </form>
+                    <p class="subscribe-note">Γίνε μέλος μιας γενιάς που δεν τα παρατάει.</p>
+                </section>
+            </div>
+        </main>
+        <footer class="app-footer">
+            <div class="container">
+                <p class="footer-text">
+                    &copy; <span id="currentYear"></span> Thewria. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="#hero">Αρχική</a> |
+                    <a href="#story">Η Ιστορία</a> |
+                    <a href="#subjects">Μαθήματα</a> |
+                    <a href="#subscribe">Εγγραφή</a> |
+                    <a href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer" class="footer-buymeacoffee">
+                        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
+                    </a>
+                </div>
+                <p class="footer-small-text">
+                    Φτιαγμένο από μαθητή, για μαθητές. Μια μικρή επανάσταση στο διάβασμα.
+                </p>
+            </div>
+        </footer>
+    </div>
 </div>
-
-<p id="nextQuestionBtn" class="next-btn">ⓘ Κάνε scroll για ερωτήσεις</p>
-
-
-
-<div class="navigation-menu">
-    <a href="index.html" class="nav-item"><img class="icons" src="images/home.png" alt="home icon"></a>
-    <a href="settings.html" class="nav-item"><img class="icons" src="images/settings.png" alt="settings icon"></a>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
