@@ -1,7 +1,7 @@
 :root {
     --color-light: #f3f4f6;
     --color-dark: #e5e7eb;
-    --color-bg-dark: #111827;
+    --color-bg-dark: #111a27;
     --color-bg-light-dark: #1f2937;
     --color-primary: #8b5cf6;
     --color-primary-hover: #7c3aed;
@@ -211,7 +211,7 @@ img {
 .hero-scroll-indicator {
     position: absolute;
     bottom: 30px;
-    left: 45%;
+    left: 49%;
     transform: translateX(-50%);
     font-size: 2.2rem;
     color: #4b5563;
@@ -341,6 +341,18 @@ img {
     color: var(--color-text-darker);
     margin-top: 50px;
     font-size: 1rem;
+}
+
+.divider {
+    margin-top: 40px;
+    color: #a78bfa;
+    background-color: #a78bfa;
+    height: 3px;
+    border-color: transparent;
+}
+
+.colored {
+    text-color: #a78bfa; !important;
 }
 
 
@@ -535,9 +547,9 @@ img {
 
     .hero-section { min-height: calc(100vh - 60px); padding: 20px; }
     .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.05rem; margin-bottom: 30px; margin-left: 0px; }
+    .hero-subtitle { font-size: 1.05rem; margin-bottom: 30px; margin-left: 0px;}
     .hero-cta-button { padding: 14px 28px; font-size: 1rem; }
-    .hero-scroll-indicator { font-size: 2rem; bottom: 25px; }
+    .hero-scroll-indicator { font-size: 2rem; bottom: 25px; left: 48%;}
 
     .story-section, .subject-selection-section, .contact-section, .subscribe-section {
         padding: 60px 16px;
