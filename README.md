@@ -1,11 +1,19 @@
-Hey there! 👋
+# 📚 Thewria - Greek SAT Study App
 
-<br>
+**TikTok-style learning platform for Greek university entrance exams**  
+*Scroll through exam questions instead of videos - now with Math, expanding to ALL subjects soon.*
 
-This project works similar to TikTok, but is made for studying. Instead of scrolling watching random videos, scroll through questions of the Greek SATs with the 
-ability to view the answers anytime you wish. 
+➡️ **Live Demo**: [thewria.com](https://thewria.com) *(Best experienced on mobile 📱)*
 
-Currently it only features math, but the goal is to expand it covering most of the lessons required in Greek SATs.
+![App Screenshot](https://i.imgur.com/o1xdKQR.png)
+[Math Lessons](https://thewria.com/math/index.html)
 
-<p><a target="_blank" href="https://thewria.com">Click to view this project in action!</a></p>
-💡 I suggest using this on mobile for the best experience :)
+---
+
+## 🔒 Intellectual Property Protection
+This project is protected under **dual licensing**:
+
+1. **Code**:  
+   ```plaintext
+   Copyright (C) 2025 [Justsubway]
+   All rights reserved. Unauthorized copying, derivation, or reuse of this code is strictly prohibited.
