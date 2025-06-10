@@ -6,7 +6,7 @@
 ➡️ **Live Demo**: [thewria.com](https://thewria.com) *(Best experienced on mobile 📱)*
 
 ![App Screenshot](https://i.imgur.com/o1xdKQR.png)
-[Math Lessons](https://thewria.com/math/index.html)
+![Math Lessons](https://thewria.com/math/index.html)
 
 ---
 
